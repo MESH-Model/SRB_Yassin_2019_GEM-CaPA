@@ -1,0 +1,50 @@
+#########################################################################
+:FileType ts0 ASCII EnSim 1.0
+# Canadian Hydraulics Centre/National Research Council (c) 1998-2007
+# DataType EnSim Table Data
+#
+:Application GreenKenue
+:Version 3.1.33
+:WrittenBy Username
+:CreationDate Wed, Feb 28, 2007 11:20 AM
+#
+#------------------------------------------------------------------------
+#
+:Name   abstraction_point_locations
+#
+# Spacing doesn't matter (e.g., tabs or spaces; doesn't matter)
+# Lines leading with pound sign (#) are ignored
+# For 'MESH_input_abstractionpoint' file:
+# - Switch between txt or tb0 format with 'ABSTPOINTFILEFLAG' control
+#   flag in run_options.ini
+# - Only name and location are supported in txt format (e.g.,
+#   'MinfracStorage' requires using the tb0 format file)
+#
+:Projection LatLong
+:Ellipsoid GRS80
+#
+# From txt format file:
+#    3
+#3053.22 -6827.34 irrigation_1
+#3038.28 -6745.02 irrigation_2
+#3038.40 -6752.82 irrigation_3
+#
+#
+:ColumnMetaData
+:ColumnType           float           float           float            float           float           float           float           float           float
+:ColumnName           irrigation_1    irrigation_2    irrigation_3     irrigation_4    irrigation_5    irrigation_6    irrigation_7    irrigation_8    irrigation_9
+:ColumnLocationX      -113.680        -113.550        -113.550         -113.050        -112.680        -112.420        -113.800        -107.05        -106.675
+:ColumnLocationY      49.15           49.28           49.650           49.40           50.026          50.650          50.900          51.400          52.020
+#
+# MinStorage: Minimum storage to leave in the channel, not accessible
+#             for irrigation. [m3].
+# = 0.0 to deactivate; must be >= 0.0
+# ->    IRAVAI = max( ((calculated)) , MinStorage )
+:MinStorage         0.0          0.0          0.0          0.0          0.0          0.0          0.0          0.0          0.0
+# MinfracStorage: Fraction of storage to leave in the channel, not
+#                 accessible for irrigation. [--].
+# = 0.0 to deactivate must be >= 0.0 and < 1.0
+# ->    IRAVAI = ((calculated)) * ( 1.0 - MinfracStorage )
+:MinfracStorage		0.25         0.25         0.25         0.25         0.25         0.25         0.25         0.25         0.25
+:EndColumnMetaData
+:EndHeader
